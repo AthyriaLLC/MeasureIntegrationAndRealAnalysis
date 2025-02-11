@@ -1,0 +1,51 @@
+\documentclass[../main]{subfiles}
+\usepackage{delarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \title{\vspace{-2em}Chapter 1: Vector Spaces}
+% \author{\emph{Linear Algebra Done Right}, by Sheldon Axler}
+% \date{}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION  1A
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{1A}
+
+% Problem 1
+\begin{problem}{1}
+Suppose $f:[a,b] \rightarrow \R$ is a bounded function such that
+
+\[L(f, P, [a,b]) = U(f,P,[a,b])\]
+
+for some partion $P$ of $[a,b]$. Prove that $f$ is a constant function on $[a,b]$.
+
+\end{problem}
+\begin{proof}
+Suppose $f$ is not a constant function on $[a,b]$. That is, for any partition $P$ of $[a,b]$ we have
+\[a=x_0<x_1<x_2<\ldots<x_n=b\]
+
+\[L(f,P,[a,b]) = \sum_{j=1}^{n}(x_j-x_{j-1})\inf_{[x_{j-1},x_{j}]}f\]
+and
+\[U(f,P,[a,b]) = \sum_{j=1}^{n}(x_j-x_{j-1})\sup_{[x_{j-1},x_{j}]}f\]
+which implies that there must be some $k\in\Z, 0\leq k<n$ for which $\inf_{[x_{k-1},x{k}]}f\ne\sup_{[x_{k-1},x_{k}]}f$. But that would leave
+\[L(f, P, [a,b]) \ne U(f,P,[a,b])\]
+contradicting the premise.
+\end{proof}
+
+\begin{problem}{2}
+	Suppose $a\leq s<t\leq b$. Define $f:[a,b]\rightarrow \R$ by
+
+	\[f(x)=\begin{cases}
+		1 &\text{if} ~~ s<x<t,\\
+		0 &\text{otherwise.}
+	\end{cases}\]
+Prove that $f$ is Riemann integrable on $[a,b]$ and that $\int_a^bf = t - s.$
+\end{problem}
+
+\end{document}

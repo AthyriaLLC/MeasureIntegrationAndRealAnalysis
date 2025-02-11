@@ -1,0 +1,153 @@
+\documentclass{book}
+\usepackage{subfiles}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES            																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[10pt]{extsizes}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{microtype} 
+\usepackage{amsmath}
+\usepackage{array,mathtools}
+\usepackage{commath}
+\usepackage[includehead,
+headheight=10mm,% Set \headheight to 10mm
+top=.25in,
+bottom=1in,
+left=0.8in,
+right=1in]{geometry}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM ENVIRONMENT         																			           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, breakable, skins}
+\newtcbtheorem{prob}% environment name
+              {Problem}% Title text
+  {enhanced, % tcolorbox styles
+  attach boxed title to top left={xshift = 4mm, yshift=-2mm},
+  colback=blue!5, colframe=black, colbacktitle=blue!3, coltitle=black,
+  boxed title style={size=small,colframe=gray},
+  fonttitle=\bfseries,
+  separator sign none
+  }%
+  {} 
+\newenvironment{problem}[1]{\begin{prob*}{#1}{}}{\end{prob*}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS/LEMMAS/ETC.         																			  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm-non}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MY COMMANDS   																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\Real}{\mathcal{Re}}
+\newcommand{\poly}{\mathcal{P}}
+\newcommand{\mat}{\mathcal{M}}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\Hom}{\mathcal{L}}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\Range}{range}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\restr}[1]{|_{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION NUMBERING																				           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\thesection{\Alph{section}:}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+% \usepackage{hyperref}
+
+% Commands
+
+% -------------------------------------------------
+
+\definecolor{ggam}{HTML}{F5DEB3}
+\definecolor{LightYellow}{HTML}{FFFBBD}
+\definecolor{SoftYellow}{HTML}{FFF59D}
+\definecolor{LightBlue}{HTML}{E2E8F4}
+\definecolor{SoftBlue}{HTML}{B7C8E6}
+
+\tcbset{
+    rounded corners,
+    colframe = black, % Melon,
+    before skip = 0.2cm,    % add extra space before the box
+    after skip = 0.5cm,      % add extra space after the box
+    arc = 5pt,   % corners roundness
+    boxrule = 0.75pt,
+}                           % setting global options for tcolorbox
+
+\newtcolorbox{yellowBox}{
+    colback = LightYellow,
+}
+
+\newtcolorbox{defYellowBox}[1]{colback=LightYellow,
+colframe=black,
+colbacktitle=SoftYellow,
+coltitle=black,
+title style={},
+title=\textbf{#1}}
+
+\newtcolorbox{blueBox}{
+    colback = LightBlue,
+}
+
+\newtcolorbox{defBlueBox}[1]{colback=LightBlue,
+colframe=black,
+colbacktitle=SoftBlue,
+coltitle=black,
+title style={},
+title=Definition: #1}
+
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=blue,
+%     filecolor=magenta,      
+%     urlcolor=cyan,
+%     pdftitle={Overleaf Example},
+%     pdfpagemode=FullScreen,
+%     }
+
+
+\setlength{\columnsep}{0.1pc}
+\setlength\parindent{0pt}
+
+\fancyhead{}
+
+\title{%
+Measure, Integration \& Real Analysis\\
+Answers to Problems}
+\author{Jonathan Roberts}
+\date{February 2025}
+
+\fancyhead[L]{MIARA Answers}
+\fancyfoot[R]{Hello}
+\begin{document}
+\fontsize{14}{20}\selectfont
+
+\maketitle
+\pagenumbering{arabic}
+\subfile{Ch1/ch1}
+
+\end{document}
